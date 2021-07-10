@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../login/img/aclc.jpg" type="image/x-icon">
+    <script src="js/pageBlocker.js"></script>
+    <title>Subject</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="scss/model.css" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../sweetAlert/dist/sweetalert2.min.css" type="text/css" />
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon ">
+                    <img src="../login/img/aclc.jpg" alt="" srcset="" id="iconx">
+                </div>
+                <div class="sidebar-brand-text mx-3">ACLC TAC </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item ">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interface
+            </div>
+
+            <!-- Nav Item - Prelim -->
+            <li class="nav-item">
+                <a class="nav-link" href="student.html">
+                    <i class="fas fa-users"></i>
+                    <span>Student List</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="teacher.html">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teacher</span></a>
+            </li>
+            <!-- Nav Item - Midterm -->
+            <li class="nav-item active">
+                <a class="nav-link" href="subject.html">
+                    <i class="fas fa-scroll"></i>
+                    <span>Subject</span></a>
+            </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="Course.html">
+                        <i class="fab fa-contao"></i>
+                        <span>Course</span></a>
+                </li>
+            <li class="nav-item">
+                <a class="nav-link" href="schedule.html">
+                    <i class="fas fa-balance-scale-left"></i>
+                    <span>Schedule</span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="registeredAdmin.html">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Registered Admin</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+
+                            <input type="hidden" class="form-control bg-light border-0 small"
+                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <img src="img/logo.png" id="logo" alt="">
+
+
+
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="userprofile">x Cabral</span>
+                                <i class="fas fa-user"></i>
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#ModalProfile" data-backdrop="false">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#modalChangePassword">
+                                    <i class="fa fa-lock fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Change Password
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" id="logoutx">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                        
+                        <div class="card shadow">
+                            <div class="card-header">
+                                <h4>
+                                    <i class="fas fa-scroll"></i> Subject List
+                                </h4>
+                            </div>
+                            <div class="card-body">
+                                <button data-toggle="modal" data-target="#AddSubjectModal"
+                                class="btn btn-success" id="AddSUbjectList"><i class="fas fa-plus mr-1"></i>Subject</button>
+                                <div class="table-responsive mt-3">
+                                    <table class="table table-hover" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Subject ID</th>
+                                                <th class="text-center">Subject Name</th>
+                                                <th class="text-center">Subject Description</th>
+                                                <th class="text-center"><i class="fas fa-cogs mr-1"></i>Option</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="SubjectTable">
+                                    
+                                    
+                                    
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                         <!--  -->         
+                </div>
+<!-- /.container-fluid -->
+
+</div>
+<!-- End of Main Content -->
+
+<!-- Footer -->
+<footer class="sticky-footer bg-white mt-3">
+    <div class="container my-auto">
+        <div class="copyright text-center my-auto">
+            <span>Copyright &copy; ACLC COLLEGE TACLOBAN </span>
+        </div>
+    </div>
+</footer>
+<!-- End of Footer -->
+
+</div>
+<!-- End of Content Wrapper -->
+
+</div>
+<!-- End of Page Wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+<!-- End Of Add New Modal -->
+<div class="modal fade" id="AddSubjectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 40%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><img src="../login/img/aclc.jpg" alt="" id="ModalLogo"> ACLC COLLEGE
+                TACLOBAN</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+               <label for="">Subject Name</label>
+               <input type="text" name="" id="AddSubjectName" class="form-control" placeholder="Subject Name" required>
+                <label for="">Subject Description</label>
+                <textarea name="" id="SubjectDescription" placeholder="Subject Description"
+                 cols="30" rows="10" style="height: 100px;" class="form-control" required></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="AddSubjectBtn"><i class="fas fa-plus mr-1"></i>Subject</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- end of add modal -->
+
+<div class="modal fade" id="EdiSubjectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 40%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"><img src="../login/img/aclc.jpg" alt="" id="ModalLogo">
+                    ACLC COLLEGE
+                    TACLOBAN</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="">
+                <label for="">Subject ID:</label>
+                <input type="text" name="" id="EditSubjectID" class="form-control" disabled >
+                <label for="">Subject Name</label>
+                <input type="text" name="" id="EditSubjectName" class="form-control" required>
+                <label for="">Subject Description:</label>
+                <textarea name="" id="EditSubjectDescription" placeholder="Subject Description" cols="30" rows="10" style="height: 100px;"
+                    class="form-control" required></textarea>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" class="btn btn-primary" id="EditSubjectBtn"><i
+                        class="fas fa-edit mr-1"></i>Subject</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="ChangeProfilexDiv">
+
+</div>
+
+<div id="ProfileChangePassDiv">
+
+</div>
+<script src="vendor/jquery/jquery.min.js"></script>
+<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="../sweetAlert/dist/sweetalert2.all.min.js"></script>
+<!-- Core plugin JavaScript-->
+<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<!-- Custom scripts for all pages-->
+<script src="js/sb-admin-2.min.js"></script>
+<!-- Page level plugins -->
+<script src="vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="js/demo/datatables-demo.js"></script>
+<script src="js/Subject.js"></script>
+<script src="js/rightClickDisable.js"></script>
+<script src="js/userProfile.js"></script>
+</body>
+
+</html>

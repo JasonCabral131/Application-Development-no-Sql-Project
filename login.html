@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="login/img/aclc.jpg">
+    <title>Login</title>
+    <link rel="stylesheet" href="login/style.css" />
+    <link rel="stylesheet" href="sweetAlert/dist/sweetalert2.min.css">
+    
+  </head>
+  <body>
+    <img class="aclc-img" src="login/img/aclc.jpg" alt="" />
+    <div class="container" id="container">
+      <div class="form-container sign-up-container">
+         <form action="" >
+          <h1>Create Account</h1>
+          <div class="social-container">
+            <a href="" class="social fb social"><i></i></a>
+            <a href="" class="social google social"><i></i></a>
+            <a href="" class="social twitter social"><i></i></a>
+          </div>
+
+          <input type="text" placeholder="LastName" id="LastName" required/>
+          <input type="text" placeholder="FirstName"  id="FirstName"required/>
+          <input type="email" placeholder="Email" id="Email"required/>
+          <input type="password" placeholder="Must Be 9 Characters" id="Password" required/>
+          <input type="password" placeholder="Confirm Password" id="Confirm_pass" required/>
+          <button type="submit" id="SignUpBtn">Sign In</button>
+        </form>
+      </div>
+      <div class="form-container sign-in-container">
+        <form action="" >
+          <h1>Sign in</h1>
+          <div class="social-container">
+            <a href="" class="social fb social"><i></i></a>
+            <a href="" class="social google social"><i></i></a>
+            <a href="" class="social twitter social" ><i></i></a>
+          </div>
+          
+          <input type="text" placeholder="User ID" id="log_user_id" required/>
+          <input type="email" placeholder="Email" id="log_user_email"  required/>
+          <input type="password" placeholder="Password"  id="log_user_password" required/>
+         
+          <button type="submit" id="LoginUserBtn">Login</button>
+        </form>
+      </div>
+      <div class="overlay-container">
+        <div class="overlay">
+          <div class="overlay-panel overlay-left">
+            <h1>Login here!</h1>
+            <p>
+              To keep connected with us please login with your personal info
+            </p>
+            <button class="ghost" id="signIn">Sign In</button>
+          </div>
+          <div class="overlay-panel overlay-right">
+            <h1>Register here!</h1>
+            <p>No account? Sign up here</p>
+            <button class="ghost" id="signUp">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/Jquery3.4.1.min.js"></script>
+    <script src="sweetAlert/dist/sweetalert2.all.min.js"></script>
+    <script src="login/js/login.js"></script>
+    <script src="login/js/app.js"></script>
+  
+  </body>
+</html>

@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../login/img/aclc.jpg" type="image/x-icon">
+    <script src="js/pageBlocker.js"></script>
+    <title>Schedule</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+    <link href="scss/model.css" rel="stylesheet" type="text/css">
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../sweetAlert/dist/sweetalert2.min.css" type="text/css" />
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" type="text/css" />
+    <link rel="stylesheet" href="vendor/bootstrap/css/tempusdominus-bootstrap-4.min.css" type="text/css" />
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-dark sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon ">
+                    <img src="../login/img/aclc.jpg" alt="" srcset="" id="iconx">
+                </div>
+                <div class="sidebar-brand-text mx-3">ACLC TAC </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item ">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Interface
+            </div>
+
+            <!-- Nav Item - Prelim -->
+            <li class="nav-item">
+                <a class="nav-link" href="student.html">
+                    <i class="fas fa-users"></i>
+                    <span>Student List</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="teacher.html">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                    <span>Teacher</span></a>
+            </li>
+
+            <!-- Nav Item - Midterm -->
+            <li class="nav-item ">
+                <a class="nav-link" href="subject.html">
+                    <i class="fas fa-scroll"></i>
+                    <span>Subject</span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="Course.html">
+                    <i class="fab fa-contao"></i>
+                    <span>Course</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="schedule.html">
+                    <i class="fas fa-balance-scale-left"></i>
+                    <span>Schedule</span></a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link" href="registeredAdmin.html">
+                    <i class="fas fa-user-shield"></i>
+                    <span>Registered Admin</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+
+                            <input type="hidden" class="form-control bg-light border-0 small"
+                                placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <img src="img/logo.png" id="logo" alt="">
+
+
+
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                                aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="userprofile">x Cabral</span>
+                                <i class="fas fa-user"></i>
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#ModalProfile" data-backdrop="false">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Profile
+                                </a>
+                                <a class="dropdown-item" href="" data-toggle="modal" data-target="#modalChangePassword">
+                                    <i class="fa fa-lock fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Change Password
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" id="logoutx">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>
+                                <i class="fas fa-balance-scale-left mr-1"></i>
+                                Schedule
+                            </h4>
+                        </div>
+                        <div class="card-body">
+                                <button  type="button" data-toggle="modal" data-target="#AddScheduleModal" 
+                                class="btn btn-success"><i class="fas fa-plus mr-1"></i>Schedule</button> 
+                                <div class="table-responsive mt-2">
+                                    <table class="table table-hover" id="TableSchedule" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-center">Schedule ID</th>
+                                                <th class="text-center">Subject</th>
+                                                <th class="text-center">Lecture</th>
+                                                <th class="text-center">Laboratory</th>
+                                                <th class="text-center">Description</th>
+                                                <th class="text-center"><i class="fas fa-cogs mr-1"></i>Option</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="ScheduleTable">
+                                    
+                                    
+                                    
+                                        </tbody>
+                                    </table>
+                                </div>          
+                        </div>
+                    </div>
+                    <!--  -->
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white mt-3">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; ACLC COLLEGE TACLOBAN </span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+
+    <!-- End Of Add New Modal -->
+<div class="modal fade" id="AddScheduleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 60%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle"><h5 class="modal-title" id="exampleModalLabel"><img src="../login/img/aclc.jpg" alt="" id="ModalLogo">
+                    ACLC COLLEGE
+                    TACLOBAN</h5></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="">
+            <div class="modal-body">
+                         <div class="row">
+                             <div class="col-md-6 border-right mt-1">
+                                 <h3 class="text-center ">Lecture</h3>
+                                   
+                                 <div class="row border-top">
+                                    <!-- Time -->
+                                      <div class="col-md-12 border-bottom">                                        
+                                        <h6 class="text-center ">Time</h6>
+                                      </div>
+                                        <div class="col-md-6 ">
+                                            <label for="">Start Of Time:</label>
+                                            <div class="form-group">
+                                                <div class="input-group date" id="datetimepicker3" data-target-input="nearest">
+                                                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker3"
+                                                        id="LecStartTime" required />
+                                                    <div class="input-group-append" data-target="#datetimepicker3" data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <label for="">End Of Time:</label>
+                                            <div class="form-group">
+                                                <div class="input-group date" id="datetimepicker4" data-target-input="nearest">
+                                                    <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker4"
+                                                        id="LecEndOfTime" required />
+                                                    <div class="input-group-append" data-target="#datetimepicker4" data-toggle="datetimepicker">
+                                                        <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            <!-- End Of Time -->
+                                    </div>
+                                    <div class="row  border-top mt-1">
+                                            <!-- Start Of Date -->
+                                            
+                                            <div class="col-md-12 border-bottom">
+                                                <h6 class="text-center ">Date</h6>
+                                            </div>
+                                            
+                                            <div class="col-md-6 mt-2">
+                                                <select name="" id="LecStartDate" class="form-control">
+                                                    <option value="Mon">Mon</option>
+                                                    <option value="Tue">Tue</option>
+                                                    <option value="Wed">Wed</option>
+                                                    <option value="Thu">Thu</option>
+                                                    <option value="Fri">Fri</option>
+                                                    <option value="Sat">Sat</option>
+                                                    <option value="Sun">Sun</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-md-6 mt-2">
+                                                <select name="" id="LecEndDate" class="form-control">
+                                                    <option value="Only">Only</option>
+                                                    <option value="Mon">Mon</option>
+                                                    <option value="Tue">Tue</option>
+                                                    <option value="Wed">Wed</option>
+                                                    <option value="Thu">Thu</option>
+                                                    <option value="Fri">Fri</option>
+                                                    <option value="Sat">Sat</option>
+                                                    <option value="Sun">Sun</option>
+                                                </select>
+                                            </div>
+
+                                    </div>
+                                
+                             </div>
+                            <div class="col-md-6  mt-1">
+                                <h3 class="text-center ">Laboratory</h3>
+                                <div class="row border-top">
+                                    <!-- Time -->
+                                    <div class="col-md-12 border-bottom">
+                                        <h6 class="text-center ">Time</h6>
+                                    </div>
+                                    <div class="col-md-6 ">
+                                        <label for="">Start Of Time:</label>
+                                        <div class="form-group">
+                                            <div class="input-group date" id="datetimepicker6" data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker6"
+                                                    id="LabStartTime" required />
+                                                <div class="input-group-append" data-target="#datetimepicker6" data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="">End Of Time:</label>
+                                        <div class="form-group">
+                                            <div class="input-group date" id="datetimepicker5" data-target-input="nearest">
+                                                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker5"
+                                                    id="LabEndOfTime" required />
+                                                <div class="input-group-append" data-target="#datetimepicker5" data-toggle="datetimepicker">
+                                                    <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- End Of Time -->
+                                </div>
+                                <div class="row  border-top mt-1">
+                                    <!-- Start Of Date -->
+                                    <div class="col-md-12 border-bottom">
+                                        <h6 class="text-center ">Date</h6>
+                                    </div>
+                                
+                                    <div class="col-md-6 mt-2">
+                                        <select name="" id="LabStartDate" class="form-control">
+                                            <option value="Mon">Mon</option>
+                                            <option value="Tue">Tue</option>
+                                            <option value="Wed">Wed</option>
+                                            <option value="Thu">Thu</option>
+                                            <option value="Fri">Fri</option>
+                                            <option value="Sat">Sat</option>
+                                            <option value="Sun">Sun</option>
+                                        </select>
+                                        
+                                    </div>
+                                    <div class="col-md-6 mt-2">
+                                        <select name="" id="labEndDate" class="form-control">
+                                            <option value="Only">Only</option>
+                                            <option value="Mon">Mon</option>
+                                            <option value="Tue">Tue</option>
+                                            <option value="Wed">Wed</option>
+                                            <option value="Thu">Thu</option>
+                                            <option value="Fri">Fri</option>
+                                            <option value="Sat">Sat</option>
+                                            <option value="Sun">Sun</option>
+                                        </select>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                         </div>
+
+                        <div class="row border-top mt-2">
+                            <div class="col-md-6">
+                                <label for="">Subject:</label>
+                                <select name="" id="SUBJECTALL" class="form-control">
+                                </select>
+
+                            </div>
+                            <div class="col-md-6">
+                                <label for="">Description:</label>
+                                <textarea name="" id="decription" class="form-control" cols="30" rows="10" style="height: 70px" required></textarea>
+                            
+                            </div>
+                        </div>
+                
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" id="AddScheduleBtn">
+                    <i class="fas fa-plus mr-1"></i>Schedule</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- Update Schedule -->
+<!-- End Of Add New Modal -->
+
+<div class="modal fade" id="UpdateScheduleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle"
+    aria-hidden="true">
+    <div class="modal-dialog" style="max-width: 60%;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">
+                    <h5 class="modal-title" id="exampleModalLabel"><img src="../login/img/aclc.jpg" alt=""
+                            id="ModalLogo">
+                        ACLC COLLEGE
+                        TACLOBAN</h5>
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="">
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6 border-right mt-1">
+                            <h3 class="text-center ">Lecture</h3>
+
+                            <div class="row border-top">
+                                <!-- Time -->
+                                <div class="col-md-12 border-bottom">
+                                    <h6 class="text-center ">Time</h6>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <label for="">Start Of Time:</label>
+                                    <div class="form-group">
+                                        <div class="input-group date" id="datetimepicker7" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input"
+                                                data-target="#datetimepicker7" id="LecStartTime1" required />
+                                            <div class="input-group-append" data-target="#datetimepicker7"
+                                                data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">End Of Time:</label>
+                                    <div class="form-group">
+                                        <div class="input-group date" id="datetimepicker8" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input"
+                                                data-target="#datetimepicker8" id="LecEndOfTime1" required />
+                                            <div class="input-group-append" data-target="#datetimepicker8"
+                                                data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Of Time -->
+                            </div>
+                            <div class="row  border-top mt-1">
+                                <!-- Start Of Date -->
+
+                                <div class="col-md-12 border-bottom">
+                                    <h6 class="text-center ">Date</h6>
+                                </div>
+
+                                <div class="col-md-6 mt-2">
+                                    <select name="" id="LecStartDate1" class="form-control">
+                                        <option value="Mon">Mon</option>
+                                        <option value="Tue">Tue</option>
+                                        <option value="Wed">Wed</option>
+                                        <option value="Thu">Thu</option>
+                                        <option value="Fri">Fri</option>
+                                        <option value="Sat">Sat</option>
+                                        <option value="Sun">Sun</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6 mt-2">
+                                    <select name="" id="LecEndDate1" class="form-control">
+                                        <option value="Only">Only</option>
+                                        <option value="Mon">Mon</option>
+                                        <option value="Tue">Tue</option>
+                                        <option value="Wed">Wed</option>
+                                        <option value="Thu">Thu</option>
+                                        <option value="Fri">Fri</option>
+                                        <option value="Sat">Sat</option>
+                                        <option value="Sun">Sun</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-6  mt-1">
+                            <h3 class="text-center ">Laboratory</h3>
+                            <div class="row border-top">
+                                <!-- Time -->
+                                <div class="col-md-12 border-bottom">
+                                    <h6 class="text-center ">Time</h6>
+                                </div>
+                                <div class="col-md-6 ">
+                                    <label for="">Start Of Time:</label>
+                                    <div class="form-group">
+                                        <div class="input-group date" id="datetimepicker9" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input"
+                                                data-target="#datetimepicker9" id="LabStartTime1" required />
+                                            <div class="input-group-append" data-target="#datetimepicker9"
+                                                data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="">End Of Time:</label>
+                                    <div class="form-group">
+                                        <div class="input-group date" id="datetimepicker11" data-target-input="nearest">
+                                            <input type="text" class="form-control datetimepicker-input"
+                                                data-target="#datetimepicker11" id="LabEndOfTime1" required />
+                                            <div class="input-group-append" data-target="#datetimepicker11"
+                                                data-toggle="datetimepicker">
+                                                <div class="input-group-text"><i class="far fa-clock"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- End Of Time -->
+                            </div>
+                            <div class="row  border-top mt-1">
+                                <!-- Start Of Date -->
+                                <div class="col-md-12 border-bottom">
+                                    <h6 class="text-center ">Date</h6>
+                                </div>
+
+                                <div class="col-md-6 mt-2">
+                                    <select name="" id="LabStartDate1" class="form-control">
+                                        <option value="Mon">Mon</option>
+                                        <option value="Tue">Tue</option>
+                                        <option value="Wed">Wed</option>
+                                        <option value="Thu">Thu</option>
+                                        <option value="Fri">Fri</option>
+                                        <option value="Sat">Sat</option>
+                                        <option value="Sun">Sun</option>
+                                    </select>
+
+                                </div>
+                                <div class="col-md-6 mt-2">
+                                    <select name="" id="labEndDate1" class="form-control">
+                                        <option value="Only">Only</option>
+                                        <option value="Mon">Mon</option>
+                                        <option value="Tue">Tue</option>
+                                        <option value="Wed">Wed</option>
+                                        <option value="Thu">Thu</option>
+                                        <option value="Fri">Fri</option>
+                                        <option value="Sat">Sat</option>
+                                        <option value="Sun">Sun</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row border-top mt-2">
+                        <div class="col-md-6">
+                            <label for="">Subject:</label>
+                            <select name="" id="SUBJECTALL1" class="form-control">
+                            </select>
+
+                        </div>
+                        <div class="col-md-6">
+                            <label for="">Description:</label>
+                            <textarea name="" id="decription1" class="form-control" cols="30" rows="10"
+                                style="height: 70px" required></textarea>
+
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="" id="ScheduleId">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" id="UpdateScheduleBtn">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div id="ChangeProfilexDiv">
+
+</div>
+
+<div id="ProfileChangePassDiv">
+
+</div>
+    <script  type="text/javascript"  src="vendor/jquery/jquery.min.js"></script>
+    <script  type="text/javascript"  src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script  type="text/javascript"  src="vendor/bootstrap/js/bootstrap.min.js"></script>
+   <script type="text/javascript"   src="vendor/bootstrap/js/moment.min.js"></script>
+    <script type="text/javascript" src="vendor/bootstrap/js/tempusdominus-bootstrap-4.min.js"></script>
+    <script   type="text/javascript"  src="../sweetAlert/dist/sweetalert2.all.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script  type="text/javascript"  src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script   type="text/javascript"  src="js/sb-admin-2.min.js"></script>
+    <!-- Page level plugins -->
+    <script  type="text/javascript"  src="vendor/datatables/jquery.dataTables.min.js"></script>
+    <script  type="text/javascript"  src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+   
+    <script  type="text/javascript"  src="js/schedule.js"></script>
+    <script  type="text/javascript"  src="js/scheduleValidator.js"></script>
+    <script src="js/rightClickDisable.js"></script>
+    <script src="js/userProfile.js"></script>
+</body>
+
+</html>
